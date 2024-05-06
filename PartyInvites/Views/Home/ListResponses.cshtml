@@ -1,0 +1,36 @@
+﻿@*
+	ListResponses
+	Author: Jaren Montano
+	Date: 12/1/2023
+	Purpose: This page is ment
+	to list out the results in a table
+	from all the people how have
+	said that they are coming.
+
+*@
+
+@model IEnumerable<PartyInvites.Models.GuestResponse>
+
+	<h2>Here is a list of people attending the party.</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Phone</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach(GuestResponse g in Model)
+			{
+				<tr>
+					<th>@g.Name</th>
+					<th>@g.Email</th>
+					<th>@g.Phone</th>
+				</tr>
+			}
+		</tbody>
+	</table>
+	<p>
+		<a asp-action="Index"> Click to go back home</a>
+	</p>

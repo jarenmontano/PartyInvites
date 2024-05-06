@@ -1,0 +1,30 @@
+﻿@*
+	Thanks
+	Author: Jaren Montano
+	Date: 12/1/2023
+	Purpose: This page will load 
+	showing that there response has been submitted
+
+*@
+
+@{
+
+	ViewData["Title"] = "Thanks";
+}
+
+@model PartyInvites.Models.GuestResponse
+
+
+<h1>Thank You, @Model.Name!</h1>
+@if(Model.WillAttend == true)
+{
+	@:It's great that you're comming. The drinks are already in the fridge!
+}
+else
+{
+	@:Sorry to hear you cannot make it, but thanks for letting us know.
+}
+
+<p>
+	Click <a asp-action="ListResponses">here</a> to see who is coming.
+</p>

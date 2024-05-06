@@ -1,0 +1,44 @@
+﻿@*
+	RsvpForm
+	Author: Jaren Montano
+	Date: 12/1/2023
+	Purpose: To retrive the info
+	from the user and validate, then
+	send to guest response object.
+
+*@
+
+
+@{
+	
+	ViewData["Title"] = "RSVP Form";
+}
+
+
+
+@model PartyInvites.Models.GuestResponse
+<form asp-action="RsvpForm" method="Post">
+	<div asp-validation-summary="All"></div>
+	<p>
+		<label asp-for="Name">Your Name: </label>
+		<input asp-for="Name"/>
+	</p>
+	<p>
+		<label asp-for="Email">Your Email: </label>
+		<input asp-for="Email"/>
+	</p>
+	<p>
+		<label asp-for="Phone">Your Phone: </label>
+		<input asp-for="Phone"/>
+	</p>
+
+	<p>
+		<label > Will you Attend? </label>
+		<select asp-for="WillAttend">
+			<option value="">Choose an option</option>
+			<option value="true">Yes, I'll be there!</option>
+			<option value="false">No, I can't come.</option>
+		</select>
+	</p>
+		<button type="submit">Submit Rsvp</button>
+</form>
